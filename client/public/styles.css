@@ -1,0 +1,69 @@
+.main{
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: "#013369";
+}
+.games-list {
+    columns: 6 50px;
+    column-gap: 10px;
+}
+body{
+    align-items: center;
+    background-color: "#013369";
+}
+.date-input{
+    position: relative;
+}
+
+input{
+    position: relative;
+    left: 1660px;
+    bottom: 200px;
+}
+.date-button {
+    position: relative;
+    left: 1670px;
+    bottom: 200px;
+}
+.date-label {
+    position: relative;
+    left: 1650px;
+    bottom: 200px;
+}
+
+h4 {
+color: white;
+}
+footer{
+    background-color: #01153E;
+}
+h5 {
+    color: white;
+}
+p {
+    color: white;
+}
+.footer-div {
+    color: white;
+}
+img {
+    position: relative;
+    padding: 20px;
+    transform-origin: top left;
+}
+h1 {
+    position: relative;
+    left: 150px;
+    bottom:150px
+}
+DateForm {
+    position: relative;
+    bottom: 100px;
+}
+.title {
+    height: 200px;
+}
+.img-div{
+
+}
