@@ -19,7 +19,6 @@ function App() {
     const response = await axios.post("http://localhost:5000/api/initialGames", {month,day,year,league});
     console.log(response.data.events);
     if(response.data.events){
-      console.log("Made if statement")
       setGames(response.data.events);
     }else{
       setGames([{
@@ -30,7 +29,7 @@ function App() {
   }
 
   const handleNewDate = async (date) =>{
-    const response = await axios.post("http://localhost:5000/api/newGames", {date,league})
+    const response = await axios.post("http://localhost:5000/api/newDate", {date,league})
     setGames(response.data.events);
   } 
 
@@ -41,12 +40,15 @@ function App() {
   return (
     
 <div className="app">
-    <Navbar bg="dark" variant="dark" >
-      <Navbar.Brand href="#home">Sports Page</Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link onClick={() => setLeague("NFL")} href={"#"}>Football</Nav.Link>
-        <Nav.Link onClick={() => setLeague("MLB")} href={"#"}>Baseball</Nav.Link>
-        <Nav.Link onClick={() => setLeague("NBA")} href={"#"}>Basketball</Nav.Link>
+    <Navbar bg="dark py-3" variant="dark" >
+      <Navbar.Brand style={{fontFamily:"Titillium Web, sans-serif",fontWeight:"700",fontSize:"40px", paddingLeft:"50px"}} href="#home">Sport Events</Navbar.Brand>
+      <Nav  className="ml-auto">
+        <Navbar.Text style={{fontSize:"20px", paddingRight:"10px"}}>
+            Change League:
+        </Navbar.Text>
+        <Nav.Link style={{fontSize:"20px"}} onClick={() => setLeague("NFL")} href={"#"}>Football</Nav.Link>
+        <Nav.Link style={{fontSize:"20px"}} onClick={() => setLeague("MLB")} href={"#"}>Baseball</Nav.Link>
+        <Nav.Link style={{fontSize:"20px"}} onClick={() => setLeague("NBA")} href={"#"}>Basketball</Nav.Link>
       </Nav>
     </Navbar>
     <div style={{backgroundColor:"#013369"}}>
@@ -61,25 +63,12 @@ function App() {
     <div className="container-fluid text-center text-md-left">
         <div className="row">
             <div className="col-md-6 mt-md-0 mt-3">
-                <h5 className="text-uppercase">Footer Content</h5>
-                <p>Here you can use rows and columns to organize your footer content.</p>
+                <h5 className="text-uppercase">Sports Games Lookup</h5>
+                <p>A simple app to lookup sporting events.</p>
             </div>
 
             <hr className="clearfix w-100 d-md-none pb-0"/>
 
-            <div className="col-md-3 mb-md-0 mb-3">
-                <h5 className="text-uppercase">Links</h5>
-                <ul className="list-unstyled">
-                    <li><a href="#!">Link 1</a></li>
-                </ul>
-            </div>
-
-            <div className="col-md-3 mb-md-0 mb-3">
-                <h5 className="text-uppercase">Links</h5>
-                <ul className="list-unstyled">
-                    <li><a href="#!">Link 1</a></li>
-                </ul>
-            </div>
         </div>
     </div>
 

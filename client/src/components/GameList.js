@@ -6,7 +6,7 @@ function GameList ({games}) {
         return <GameShow games={game} />
     }) 
 
-    return <div className="games-list" style={{padding:"50px"}}>
+    return <div className="games-list" style={{padding:"50px 50px 400px 50px"}}>
         {renderedGames}
         </div>;
 }
